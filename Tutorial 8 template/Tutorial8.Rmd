@@ -1,6 +1,12 @@
 ---
 title: "Corona Virus Report"
 author:
+- familyname: Juntong
+  othernames: Wei
+  address: Monash Universtidy
+  email: jwei55@student.monash.edu
+  correspondingauthor: true
+  qualifications:  Master
 - familyname: XXXX
   othernames: XXX
   address: Monash Universtidy
@@ -8,9 +14,11 @@ author:
   correspondingauthor: true
   qualifications:  XXX
 - familyname: XXXX
-  othernames: Reports
-  address: XXX
-  qualifications: XXX
+  othernames: XXX
+  address: Monash Universtidy
+  email: XXX
+  correspondingauthor: true
+  qualifications:  XXX
 - familyname: XXX
   othernames: XXX
   address: XXX
@@ -49,6 +57,28 @@ library(bookdown)
 
 
 \section*{Country XX1 and YY1"}
+
+@article{cleveland1990stl explains the theory about the seasonal-trend based on loess, 
+
+```{r}
+woldwidecase <- read_csv("Data/worldwidecases.csv")
+```
+```{r}
+Jan_Aus <- woldwidecase%>% 
+  filter(countriesAndTerritories == "Japan" | countriesAndTerritories == "Australia")%>% 
+  group_by(countriesAndTerritories)%>% 
+  summarise(Number_of_Case = sum(cases))
+Jan_Aus
+```
+```{r}
+death <- woldwidecase%>% 
+  filter(countriesAndTerritories == "Japan" | countriesAndTerritories == "Australia")%>% 
+  group_by(countriesAndTerritories) %>%
+  summarise(sum = sum(deaths))
+death
+```
+
+
 
 \section*{Country XX2 and YY2}
 
