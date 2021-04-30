@@ -78,7 +78,7 @@ death <- woldwidecase%>%
 death
 ```
 
-
+the result shows that...
 
 \section*{Country XX2 and YY2}
 
