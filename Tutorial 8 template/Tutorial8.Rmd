@@ -64,12 +64,10 @@ library(bookdown)
 woldwidecase <- read_csv("Data/worldwidecases.csv")
 ```
 ```{r}
-Jan_Aus <- woldwidecase%>% 
 Jan_Aus1 <- woldwidecase%>% 
   filter(countriesAndTerritories == "Japan" | countriesAndTerritories == "Australia")%>% 
   group_by(countriesAndTerritories)%>% 
   summarise(Number_of_Case = sum(cases))
-Jan_Aus
 Jan_Aus1
 ```
 ```{r}
